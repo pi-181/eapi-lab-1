@@ -29,16 +29,17 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        colKeyInput.textProperty().addListener(makeFilter(colKeyInput, 5));
-        rowKeyInput.textProperty().addListener(makeFilter(rowKeyInput, 5));
+        toEncryptInput.textProperty().addListener(makeFilter(toEncryptInput,  false,25));
+        colKeyInput.textProperty().addListener(makeFilter(colKeyInput,  true,5));
+        rowKeyInput.textProperty().addListener(makeFilter(rowKeyInput, true,5));
     }
 
-    private ChangeListener<String> makeFilter(TextField field, int maxLength) {
+    private ChangeListener<String> makeFilter(TextField field, boolean numbersOnly, int maxLength) {
         return (observable, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*"))
+            if (numbersOnly && !newValue.matches("\\d*"))
                 field.setText(newValue.replaceAll("[^\\d]", ""));
 
-            if (newValue.length() > maxLength)
+            if (maxLength > 0 && newValue.length() > maxLength)
                 field.setText(newValue.substring(0, maxLength));
         };
     }
