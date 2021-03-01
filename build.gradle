@@ -4,7 +4,7 @@ apply plugin: 'application'
 group 'com.demkom58'
 version '1.0-SNAPSHOT'
 
-application.mainClassName = "com.chnty_team.eapi_lab_1.EncryptionApplication"
+application.mainClassName = "com.chntu_team.eapi_lab_1.EncryptionApplication"
 jar.enabled = true
 
 compileJava.options.encoding = "UTF-8"
