@@ -5,17 +5,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="225.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chntu_team.eapi_lab_1.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chntu_team.eapi_lab_1.MainController">
    <children>
-      <TextField fx:id="toEncryptInput" alignment="CENTER" layoutX="22.0" layoutY="86.0" prefHeight="30.0" prefWidth="280.0" />
-      <Button layoutX="22.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#onEncrypt" prefHeight="25.0" prefWidth="137.0" text="Зашифрувати" />
-      <Button layoutX="165.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#onDecrypt" prefHeight="25.0" prefWidth="137.0" text="Розшифрувати " />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="119.0" prefHeight="20.0" prefWidth="280.0" text="Результат" textAlignment="CENTER" />
-      <TextField fx:id="resultInput" alignment="CENTER" editable="false" layoutX="22.0" layoutY="143.0" prefHeight="25.0" prefWidth="280.0" promptText="Тут буде результат :)" />
-      <TextField fx:id="colKeyInput" layoutX="21.0" layoutY="34.0" prefHeight="25.0" prefWidth="137.0" />
-      <TextField fx:id="rowKeyInput" layoutX="165.0" layoutY="34.0" prefHeight="25.0" prefWidth="137.0" />
-      <Label alignment="CENTER" layoutX="22.0" layoutY="61.0" prefHeight="20.0" prefWidth="280.0" text="Текст для шифрування" textAlignment="CENTER" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="17.0" prefWidth="146.0" text="Ключ для стовбців" textAlignment="CENTER" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="15.0" prefHeight="17.0" prefWidth="146.0" text="Ключ для рядків" textAlignment="CENTER" />
+      <TextField fx:id="toEncryptInput" alignment="CENTER" layoutX="22.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="280.0" />
+      <Button layoutX="22.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onEncrypt" prefHeight="25.0" prefWidth="137.0" text="Зашифрувати" />
+      <Button layoutX="165.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onDecrypt" prefHeight="25.0" prefWidth="137.0" text="Розшифрувати " />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="280.0" text="Результат" textAlignment="CENTER" />
+      <TextField fx:id="resultInput" alignment="CENTER" editable="false" layoutX="22.0" layoutY="167.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="280.0" promptText="Тут буде результат :)" />
+      <TextField fx:id="colKeyInput" layoutX="21.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="137.0" />
+      <TextField fx:id="rowKeyInput" layoutX="165.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="137.0" />
+      <Label alignment="CENTER" layoutX="22.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="280.0" text="Текст для шифрування" textAlignment="CENTER" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="146.0" text="Ключ для стовбців" textAlignment="CENTER" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="146.0" text="Ключ для рядків" textAlignment="CENTER" />
+      <Label fx:id="colNumberLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="137.0" textAlignment="CENTER" />
+      <Label fx:id="rowNumberLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="137.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>
