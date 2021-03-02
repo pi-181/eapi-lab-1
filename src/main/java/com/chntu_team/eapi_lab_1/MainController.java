@@ -9,6 +9,10 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
+import lombok.SneakyThrows;
+
+import java.io.File;
 
 public class MainController {
     private final DoubleTranspositionEncryptor encryptor = new DoubleTranspositionEncryptor();
@@ -58,12 +62,29 @@ public class MainController {
 
     @FXML
     public void onFileLoad(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open encrypted text");
+        fileChooser.setSelectedExtensionFilter(
+                new FileChooser.ExtensionFilter("Encrypted text", ".txt")
+        );
 
+        File file = fileChooser.showOpenDialog(null);
+        if (file == null) return;
+
+        final String content = StringUtil.readFromFile(file).replaceAll("[\n\r]", "");
+        toEncryptInput.setText(content);
     }
 
-    @FXML
     public void onFileSave(ActionEvent event) {
-
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Encrypted text", ".txt")
+        );
+        fileChooser.setTitle("Save encrypted text");
+        File file = fileChooser.showSaveDialog(null);
+        if (file != null) {
+            StringUtil.saveToFile(resultInput.getText(), file);
+        }
     }
 
     private boolean checkInputLength() {
@@ -84,12 +105,12 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        toEncryptInput.textProperty().addListener(FxUtil.makeFilter(toEncryptInput,  false,25));
-        colKeyInput.textProperty().addListener(FxUtil.makeFilter(colKeyInput,  false,5, (o, n) -> {
+        toEncryptInput.textProperty().addListener(FxUtil.makeFilter(toEncryptInput, false, 25));
+        colKeyInput.textProperty().addListener(FxUtil.makeFilter(colKeyInput, false, 5, (o, n) -> {
             colNumberLabel.setText(StringUtil.indexOrder(n));
             return n;
         }));
-        rowKeyInput.textProperty().addListener(FxUtil.makeFilter(rowKeyInput, false,5, (o, n) -> {
+        rowKeyInput.textProperty().addListener(FxUtil.makeFilter(rowKeyInput, false, 5, (o, n) -> {
             rowNumberLabel.setText(StringUtil.indexOrder(n));
             return n;
         }));
