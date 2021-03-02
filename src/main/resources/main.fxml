@@ -2,22 +2,52 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chntu_team.eapi_lab_1.MainController">
-   <children>
-      <TextField fx:id="toEncryptInput" alignment="CENTER" layoutX="22.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="280.0" />
-      <Button layoutX="22.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onEncrypt" prefHeight="30.0" prefWidth="137.0" text="Зашифрувати" />
-      <Button layoutX="165.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onDecrypt" prefHeight="30.0" prefWidth="137.0" text="Розшифрувати " />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="280.0" text="Результат" textAlignment="CENTER" />
-      <TextField fx:id="resultInput" alignment="CENTER" editable="false" layoutX="22.0" layoutY="167.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="280.0" promptText="Тут буде результат :)" />
-      <TextField fx:id="colKeyInput" layoutX="21.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="137.0" />
-      <TextField fx:id="rowKeyInput" layoutX="165.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="137.0" />
-      <Label alignment="CENTER" layoutX="22.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="280.0" text="Текст для шифрування" textAlignment="CENTER" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="146.0" text="Ключ для стовбців" textAlignment="CENTER" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="146.0" text="Ключ для рядків" textAlignment="CENTER" />
-      <Label fx:id="colNumberLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="137.0" textAlignment="CENTER" />
-      <Label fx:id="rowNumberLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="137.0" textAlignment="CENTER" />
-   </children>
-</AnchorPane>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="294.0" prefWidth="322.0" spacing="5.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chntu_team.eapi_lab_1.MainController">
+    <MenuBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="322.0">
+      <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onFileLoad" text="Завантажити" />
+                  <MenuItem mnemonicParsing="false" onAction="#onFileSave" text="Зберегти" />
+              </items>
+          </Menu>
+      </menus>
+    </MenuBar>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+      <children>
+          <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="146.0" text="Ключ для стовбців" textAlignment="CENTER" />
+          <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="146.0" text="Ключ для рядків" textAlignment="CENTER" />
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+      <children>
+          <TextField fx:id="colKeyInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="137.0" />
+          <TextField fx:id="rowKeyInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="137.0" />
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+      <children>
+          <Label fx:id="colNumberLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="137.0" textAlignment="CENTER" />
+          <Label fx:id="rowNumberLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="137.0" textAlignment="CENTER" />
+      </children>
+   </HBox>
+    <Label alignment="CENTER" layoutX="22.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="280.0" text="Текст для шифрування" textAlignment="CENTER" />
+    <TextField fx:id="toEncryptInput" alignment="CENTER" layoutX="22.0" layoutY="142.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="280.0" />
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="280.0" text="Результат" textAlignment="CENTER" />
+    <TextField fx:id="resultInput" alignment="CENTER" editable="false" layoutX="22.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="280.0" promptText="Тут буде результат :)" />
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+      <children>
+          <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onEncrypt" prefHeight="30.0" prefWidth="137.0" text="Зашифрувати" />
+          <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onDecrypt" prefHeight="30.0" prefWidth="137.0" text="Розшифрувати " />
+      </children>
+   </HBox>
+   <Pane prefHeight="200.0" prefWidth="200.0" />
+</VBox>

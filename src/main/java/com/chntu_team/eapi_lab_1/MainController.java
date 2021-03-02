@@ -2,6 +2,7 @@ package com.chntu_team.eapi_lab_1;
 
 import com.chntu_team.eapi_lab_1.util.FxUtil;
 import com.chntu_team.eapi_lab_1.util.StringUtil;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -53,6 +54,16 @@ public class MainController {
                 StringUtil.indexOrder(colKeyInput.getText()),
                 StringUtil.indexOrder(rowKeyInput.getText())
         ));
+    }
+
+    @FXML
+    public void onFileLoad(ActionEvent event) {
+
+    }
+
+    @FXML
+    public void onFileSave(ActionEvent event) {
+
     }
 
     private boolean checkInputLength() {
